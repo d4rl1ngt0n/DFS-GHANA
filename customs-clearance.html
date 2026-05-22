@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#8B0000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>Customs clearance | Dynamic Freight Service</title>
+    <link rel="stylesheet" href="styles.css?v=dfs-cc-21">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="page-customs-flow">
+    <header class="site-header" id="siteHeader">
+        <div class="header-inner">
+            <a href="index.html" class="logo-area">
+                <img class="logo-img" src="images/logo-cropped.png" alt="Dynamic Freight Service" width="280" height="140" loading="eager" decoding="async">
+            </a>
+            <nav class="main-nav" id="primaryNav" aria-label="Primary">
+                <div class="nav-drawer-header">
+                    <span class="nav-drawer-title">Menu</span>
+                    <button type="button" class="nav-close" id="navClose" aria-label="Close menu">
+                        <span class="nav-close-icon" aria-hidden="true"></span>
+                    </button>
+                </div>
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="index.html#about" class="nav-link">About Us</a>
+                <a href="index.html#services" class="nav-link active">Services</a>
+                <a href="index.html#contact" class="nav-link nav-btn">Contact</a>
+            </nav>
+            <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Open menu">
+                <span class="nav-toggle-bar" aria-hidden="true"></span>
+                <span class="nav-toggle-bar" aria-hidden="true"></span>
+                <span class="nav-toggle-bar" aria-hidden="true"></span>
+            </button>
+        </div>
+        <div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
+    </header>
+
+    <!-- Hero + divider: full-bleed under header (same rhythm as homepage hero → first section) -->
+    <div class="customs-hero-shell">
+        <div class="service-detail-hero">
+            <div class="detail-back-bar">
+                <a href="index.html#services" class="detail-back-link">← Back to services</a>
+            </div>
+            <div class="service-detail-media">
+                <img src="images/customs-clearance-desk.png" alt="Customs clearance paperwork and documentation" width="800" height="450" loading="eager">
+            </div>
+        </div>
+        <div class="service-detail-divider" aria-hidden="true"></div>
+    </div>
+
+    <main class="customs-detail-page" id="top">
+        <section class="services customs-clearance-intro animate-on-scroll">
+            <div class="services-inner">
+                <header class="flow-intro">
+                    <div class="service-icon service-icon--customs service-detail-icon" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <path d="M14 2v6h6"/>
+                            <path d="M16 13H8"/>
+                            <path d="M16 17H8"/>
+                            <path d="M10 9H8"/>
+                        </svg>
+                    </div>
+                    <p class="flow-intro-kicker">Your clearance flow</p>
+                    <h1 class="service-detail-title flow-intro-title">Customs clearance</h1>
+                    <p class="service-description flow-intro-lead">We provide fast, transparent, and stress-free customs clearance with accurate duty estimation and zero hidden costs.</p>
+                    <div class="flow-intro-include">
+                        <p class="service-list-intro flow-intro-services-heading" id="flow-intro-services-label">Our services include</p>
+                        <ul class="flow-intro-services" aria-labelledby="flow-intro-services-label">
+                            <li>
+                                <a href="#flow-docs" class="flow-intro-service-link" aria-label="Go to Documentation handling">
+                                    <span class="flow-intro-service-cue" aria-hidden="true"></span>
+                                    <span class="flow-intro-service-label">Documentation handling</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#flow-port" class="flow-intro-service-link" aria-label="Go to Port clearance">
+                                    <span class="flow-intro-service-cue" aria-hidden="true"></span>
+                                    <span class="flow-intro-service-label">Port clearance</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#flow-duty" class="flow-intro-service-link" aria-label="Go to Duty and tax processing">
+                                    <span class="flow-intro-service-cue" aria-hidden="true"></span>
+                                    <span class="flow-intro-service-label">Duty and tax processing</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#flow-delivery" class="flow-intro-service-link" aria-label="Go to Final delivery to your location">
+                                    <span class="flow-intro-service-cue" aria-hidden="true"></span>
+                                    <span class="flow-intro-service-label">Final delivery to your location</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <p class="service-description flow-intro-tagline">With us, importing becomes predictable, efficient, and hassle-free.</p>
+                </header>
+
+                <nav class="flow-rail" aria-label="Topics on this page">
+                    <a class="flow-rail-link" href="#flow-port">Port</a>
+                    <span class="flow-rail-sep" aria-hidden="true">→</span>
+                    <a class="flow-rail-link" href="#flow-docs">Documentation</a>
+                    <span class="flow-rail-sep" aria-hidden="true">→</span>
+                    <a class="flow-rail-link" href="#flow-duty">Duty</a>
+                    <span class="flow-rail-sep" aria-hidden="true">→</span>
+                    <a class="flow-rail-link" href="#flow-delivery">Delivery</a>
+                    <span class="flow-rail-sep" aria-hidden="true">→</span>
+                    <a class="flow-rail-link" href="#flow-cargo">Cargo</a>
+                    <span class="flow-rail-sep" aria-hidden="true">→</span>
+                    <a class="flow-rail-link" href="#flow-benefits">Benefits</a>
+                </nav>
+            </div>
+        </section>
+
+        <section class="service-spotlight customs-clearance-flow animate-on-scroll">
+            <div class="service-spotlight-inner">
+                <div class="customs-flow">
+                    <section class="flow-block" id="flow-port" aria-labelledby="flow-port-heading">
+                        <div class="flow-block-inner">
+                            <h2 class="flow-block-title" id="flow-port-heading">Port Clearance</h2>
+                            <div class="flow-block-body">
+                                <p class="detail-prose">We provide complete port clearance services at Ghana’s major seaports and cargo terminals, ensuring fast and compliant cargo release procedures.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="flow-block" id="flow-docs" aria-labelledby="flow-docs-heading">
+                        <div class="flow-block-inner">
+                            <h2 class="flow-block-title" id="flow-docs-heading">Documentation Handling</h2>
+                            <div class="flow-block-body">
+                                <p class="detail-prose">Efficient documentation handling is essential for smooth cargo movement and customs compliance in Ghana. Our team manages and verifies all shipping and clearance documents like the bill of lading (BL), Commercial invoice, Parking list, Customs declaration forms etc…</p>
+                                <p class="detail-prose">Our experienced freight documentation team ensures accuracy, compliance, and timely processing to minimize delays and additional costs.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="flow-block" id="flow-duty" aria-labelledby="flow-duty-heading">
+                        <div class="flow-block-inner">
+                            <h2 class="flow-block-title" id="flow-duty-heading">Duty and Tax Processing</h2>
+                            <div class="flow-block-body">
+                                <p class="detail-prose">We assist importers and businesses in calculating, processing, and settling all applicable customs duties and taxes required for cargo clearance.</p>
+                                <p class="detail-prose">In Ghana, several levies and taxes are applied and all these are accurately estimated to give importers and clients an idea of what they should expect in customs assessment.</p>
+                                <div class="duty-callout">
+                                    <p class="duty-callout-text">Vehicle imports: open the estimator to enter your VIN and WhatsApp number (email optional). We will send your duty estimate on WhatsApp.</p>
+                                    <button type="button" class="service-btn duty-callout-btn" data-open-modal="duty">Open vehicle duty estimator</button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="flow-block" id="flow-delivery" aria-labelledby="flow-delivery-heading">
+                        <div class="flow-block-inner">
+                            <h2 class="flow-block-title" id="flow-delivery-heading">Final Delivery to Your Location</h2>
+                            <div class="flow-block-body">
+                                <p class="detail-prose">After successful customs clearance, we arrange safe and reliable delivery of your cargo directly to your warehouse, office, shop, project site, or distribution center anywhere in Ghana and neighboring West African countries.</p>
+                                <p class="service-list-intro detail-list-kicker flow-deliver-kicker">Delivery Services Include:</p>
+                                <ul class="detail-list flow-checklist">
+                                    <li>Container haulage</li>
+                                    <li>Cargo transportation</li>
+                                    <li>Door-to-door delivery</li>
+                                    <li>Heavy cargo and project cargo transportation</li>
+                                    <li>Transit delivery to Burkina Faso, Mali, Niger, and Côte d’Ivoire</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="flow-block" id="flow-cargo" aria-labelledby="flow-cargo-heading">
+                        <div class="flow-block-inner">
+                            <h2 class="flow-block-title" id="flow-cargo-heading">Types of Cargo We Handle</h2>
+                            <div class="flow-block-body">
+                                <ul class="detail-list flow-checklist">
+                                    <li>General merchandise</li>
+                                    <li>Consumer products</li>
+                                    <li>Palletized cargo</li>
+                                    <li>Full container loads (FCL)</li>
+                                    <li>Less-than-container loads (LCL)</li>
+                                    <li>Machinery</li>
+                                    <li>Retail goods</li>
+                                    <li>Industrial equipment</li>
+                                    <li>Construction materials</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="flow-block" id="flow-benefits" aria-labelledby="flow-benefits-heading">
+                        <div class="flow-block-inner">
+                            <h2 class="flow-block-title" id="flow-benefits-heading">Benefits of Professional Port Clearance</h2>
+                            <div class="flow-block-body">
+                                <p class="detail-prose detail-prose--tight">Our port operations team helps reduce:</p>
+                                <ul class="detail-list flow-checklist">
+                                    <li>demurrage charges,</li>
+                                    <li>port congestion delays,</li>
+                                    <li>and customs processing complications.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="flow-outro">
+                    <div class="service-detail-footer customs-detail-footer">
+                        <a href="index.html#contact" class="service-btn">Contact us</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Vehicle Duty Estimation Modal -->
+    <div class="modal-overlay duty-modal-overlay" id="dutyModal">
+        <div class="modal-content duty-modal-content">
+            <button class="modal-close duty-modal-close" id="closeDutyModal" aria-label="Close">&times;</button>
+            <div class="duty-modal-body" id="dutyModalFormView">
+                <header class="duty-modal-header">
+                    <h2 class="duty-modal-title" id="dutyModalHeading">Vehicle duty estimation</h2>
+                    <p class="duty-modal-intro">Enter your VIN and WhatsApp number. We will send your duty estimate on WhatsApp. Add an email if you would like a copy in your inbox (optional).</p>
+                </header>
+                <form class="duty-form" id="dutyForm" aria-labelledby="dutyModalHeading">
+                    <div class="form-group form-full">
+                        <label for="dutyVin">VIN (Vehicle Identification Number) <abbr class="duty-required" title="required">*</abbr></label>
+                        <input type="text" id="dutyVin" name="vin" required autocomplete="off" inputmode="text" placeholder="17-character VIN">
+                    </div>
+                    <div class="form-group form-full">
+                        <label for="dutyWhatsApp">WhatsApp phone number <abbr class="duty-required" title="required">*</abbr></label>
+                        <input type="tel" id="dutyWhatsApp" name="whatsapp" required autocomplete="tel" inputmode="tel" placeholder="e.g. +233 55 123 4567">
+                    </div>
+                    <div class="form-group form-full">
+                        <label for="dutyEmail">Email <span class="duty-optional">(optional)</span></label>
+                        <input type="email" id="dutyEmail" name="email" autocomplete="email" placeholder="name@company.com">
+                    </div>
+                    <button type="submit" class="duty-submit-btn">Submit request</button>
+                </form>
+            </div>
+            <div class="duty-success" id="dutyModalSuccess" hidden>
+                <div class="duty-success-inner">
+                    <p class="duty-success-title">Thank you</p>
+                    <p class="duty-success-text">Your request has been received. Our team will send your duty estimate via WhatsApp within 24 hours. If you added an email, we may also send a copy there.</p>
+                </div>
+                <button type="button" class="duty-submit-btn duty-success-close" id="closeDutySuccess">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer animate-on-scroll">
+        <div class="footer-main">
+            <div class="footer-inner">
+                <div class="footer-col footer-brand">
+                    <div class="footer-logo-area">
+                        <div class="footer-logo-frame">
+                            <img class="footer-logo-img" src="images/logo-cropped.png" alt="Dynamic Freight Service" width="280" height="140" loading="lazy" decoding="async">
+                        </div>
+                    </div>
+                    <nav class="footer-nav" aria-label="Footer">
+                        <a href="index.html">Home</a>
+                        <a href="index.html#about">About Us</a>
+                        <a href="index.html#services">Services</a>
+                        <a href="index.html#contact">Contact</a>
+                    </nav>
+                </div>
+                <div class="footer-col footer-contact">
+                    <h4>Contact Us</h4>
+                    <div class="contact-item">
+                        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+                        <span>info@dfsghana.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        <a href="tel:+233556614950">+233 55 661 4950</a>
+                    </div>
+                    <div class="contact-item">
+                        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <span>Tema, Greater Accra, Ghana</span>
+                    </div>
+                </div>
+                <div class="footer-col footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-buttons">
+                        <a href="#" class="social-btn" title="Facebook">Facebook</a>
+                        <a href="#" class="social-btn" title="Instagram">Instagram</a>
+                        <a href="#" class="social-btn" title="YouTube">YouTube</a>
+                        <a href="#" class="social-btn" title="LinkedIn">LinkedIn</a>
+                        <a href="#" class="social-btn" title="Twitter">Twitter</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© Copyright 2025 | Dynamic Freight Service</p>
+        </div>
+    </footer>
+
+    <script>
+        (function () {
+            var headerEl = document.getElementById('siteHeader');
+            var navToggle = document.getElementById('navToggle');
+            var navBackdrop = document.getElementById('navBackdrop');
+            var primaryNav = document.getElementById('primaryNav');
+
+            function closeMobileNav() {
+                if (!headerEl) return;
+                headerEl.classList.remove('nav-open');
+                if (navToggle) {
+                    navToggle.setAttribute('aria-expanded', 'false');
+                    navToggle.setAttribute('aria-label', 'Open menu');
+                }
+                if (navBackdrop) navBackdrop.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+            }
+
+            function openMobileNav() {
+                if (!headerEl) return;
+                headerEl.classList.add('nav-open');
+                if (navToggle) {
+                    navToggle.setAttribute('aria-expanded', 'true');
+                    navToggle.setAttribute('aria-label', 'Close menu');
+                }
+                if (navBackdrop) navBackdrop.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function toggleMobileNav() {
+                if (headerEl && headerEl.classList.contains('nav-open')) closeMobileNav();
+                else openMobileNav();
+            }
+
+            if (navToggle) {
+                navToggle.addEventListener('click', toggleMobileNav);
+            }
+            if (navBackdrop) {
+                navBackdrop.addEventListener('click', closeMobileNav);
+            }
+            var navClose = document.getElementById('navClose');
+            if (navClose) navClose.addEventListener('click', closeMobileNav);
+
+            if (primaryNav) {
+                primaryNav.querySelectorAll('a').forEach(function (a) {
+                    a.addEventListener('click', function () {
+                        if (window.matchMedia('(max-width: 900px)').matches) closeMobileNav();
+                    });
+                });
+            }
+
+            window.addEventListener('resize', function () {
+                if (window.innerWidth > 900) closeMobileNav();
+            });
+
+            var dutyModal = document.getElementById('dutyModal');
+            var closeDutyBtn = document.getElementById('closeDutyModal');
+            var dutyForm = document.getElementById('dutyForm');
+            var dutyFormView = document.getElementById('dutyModalFormView');
+            var dutySuccess = document.getElementById('dutyModalSuccess');
+            var closeDutySuccess = document.getElementById('closeDutySuccess');
+
+            function resetDutyModal() {
+                if (!dutyForm || !dutyFormView || !dutySuccess) return;
+                dutyForm.reset();
+                dutyFormView.removeAttribute('hidden');
+                dutySuccess.setAttribute('hidden', '');
+            }
+
+            function openDutyModalFn(e) {
+                if (e) e.preventDefault();
+                if (!dutyModal) return;
+                if (window.matchMedia('(max-width: 900px)').matches) closeMobileNav();
+                resetDutyModal();
+                dutyModal.classList.add('modal-open');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeDutyModalFn() {
+                if (!dutyModal) return;
+                dutyModal.classList.remove('modal-open');
+                document.body.style.overflow = '';
+                resetDutyModal();
+            }
+
+            if (dutyModal && dutyForm && dutyFormView && dutySuccess && closeDutyBtn && closeDutySuccess) {
+                document.querySelectorAll('[data-open-modal="duty"]').forEach(function (btn) {
+                    btn.addEventListener('click', openDutyModalFn);
+                });
+                closeDutyBtn.addEventListener('click', closeDutyModalFn);
+                closeDutySuccess.addEventListener('click', closeDutyModalFn);
+                dutyModal.addEventListener('click', function (e) {
+                    if (e.target === dutyModal) closeDutyModalFn();
+                });
+                dutyForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    dutyFormView.setAttribute('hidden', '');
+                    dutySuccess.removeAttribute('hidden');
+                });
+            }
+
+            document.querySelectorAll('.flow-rail a[href^="#"], .flow-intro-services a[href^="#"]').forEach(function (a) {
+                a.addEventListener('click', function () {
+                    if (window.matchMedia('(max-width: 900px)').matches) closeMobileNav();
+                });
+            });
+
+            document.addEventListener('keydown', function (e) {
+                if (e.key !== 'Escape') return;
+                if (dutyModal && dutyModal.classList.contains('modal-open')) {
+                    closeDutyModalFn();
+                    return;
+                }
+                if (headerEl && headerEl.classList.contains('nav-open')) {
+                    closeMobileNav();
+                }
+            });
+
+            function updateHeaderScroll() {
+                if (headerEl) headerEl.classList.toggle('is-scrolled', window.scrollY > 24);
+            }
+            window.addEventListener('scroll', updateHeaderScroll, { passive: true });
+            updateHeaderScroll();
+
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                var animatedEls = document.querySelectorAll('.animate-on-scroll');
+                var scrollIo = new IntersectionObserver(
+                    function (entries) {
+                        entries.forEach(function (entry) {
+                            if (!entry.isIntersecting) return;
+                            entry.target.classList.add('is-visible');
+                            scrollIo.unobserve(entry.target);
+                        });
+                    },
+                    { threshold: 0.12, rootMargin: '0px 0px -8% 0px' }
+                );
+                animatedEls.forEach(function (el) {
+                    scrollIo.observe(el);
+                });
+            } else {
+                document.querySelectorAll('.animate-on-scroll').forEach(function (el) {
+                    el.classList.add('is-visible');
+                });
+            }
+        })();
+    </script>
+</body>
+</html>

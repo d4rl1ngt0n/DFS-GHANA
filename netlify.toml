@@ -1,0 +1,3 @@
+# Static site (no build step). Publish the project root (index.html, styles.css, images/)
+[build]
+  publish = "."
