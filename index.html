@@ -409,11 +409,12 @@
             clearInterval(slideInterval);
         }
 
-        heroPrev.addEventListener('click', () => { prevSlide(); stopAutoPlay(); startAutoPlay(); });
-        heroNext.addEventListener('click', () => { nextSlide(); stopAutoPlay(); startAutoPlay(); });
-        heroDots.forEach((dot, i) => dot.addEventListener('click', () => { goToSlide(i); stopAutoPlay(); startAutoPlay(); }));
+        heroPrev.addEventListener('click', () => { prevSlide(); });
+        heroNext.addEventListener('click', () => { nextSlide(); });
+        heroDots.forEach((dot, i) => dot.addEventListener('click', () => { goToSlide(i); }));
 
-        startAutoPlay();
+        // Hero auto-play disabled to prevent slide transitions from
+        // overlapping with user scroll. Slides remain navigable manually.
 
         // Quote Modal
         const modal = document.getElementById('quoteModal');
