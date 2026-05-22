@@ -1148,16 +1148,6 @@ body {
     background: rgba(139, 0, 0, 0.05);
     border: 1px solid rgba(139, 0, 0, 0.09);
     border-radius: 12px;
-    position: sticky;
-    top: 5.25rem;
-    z-index: 55;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
-}
-
-@media (max-width: 900px) {
-    .flow-rail {
-        top: 4.75rem;
-    }
 }
 
 @media (max-width: 520px) {
@@ -1219,6 +1209,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
+    contain: paint;
 }
 
 .customs-flow::before {
@@ -1242,6 +1233,7 @@ body {
 .flow-block {
     position: relative;
     padding-left: 1.35rem;
+    contain: layout style;
 }
 
 .flow-block::before {
@@ -1371,13 +1363,13 @@ body {
     position: relative;
     left: auto;
     aspect-ratio: unset;
-    min-height: 500px;
+    min-height: 380px;
 }
 
 @media (min-width: 1024px) {
     .page-customs-flow .service-detail-hero .service-detail-media {
-        min-height: 80vh;
-        min-height: 80dvh;
+        min-height: 55vh;
+        min-height: 55dvh;
     }
 }
 
@@ -1389,7 +1381,7 @@ body {
     }
 
     .page-customs-flow .service-detail-hero .service-detail-media {
-        min-height: 420px;
+        min-height: 320px;
     }
 }
 
