@@ -43,10 +43,6 @@ body {
 /* Header / Navigation */
 .site-header {
     background: linear-gradient(180deg, var(--off-white) 0%, var(--off-white-dark) 100%);
-    background-image: 
-        linear-gradient(180deg, var(--off-white) 0%, var(--off-white-dark) 100%),
-        repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(139, 0, 0, 0.03) 40px, rgba(139, 0, 0, 0.03) 41px),
-        repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(139, 0, 0, 0.03) 40px, rgba(139, 0, 0, 0.03) 41px);
     padding: 1rem 2rem;
     padding-top: max(1rem, env(safe-area-inset-top));
     padding-left: max(2rem, env(safe-area-inset-left));
@@ -55,7 +51,9 @@ body {
     top: 0;
     z-index: 100;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
-    transition: box-shadow 0.35s ease, background 0.35s ease;
+    transition: box-shadow 0.35s ease;
+    will-change: box-shadow;
+    transform: translateZ(0);
 }
 
 .site-header.is-scrolled {
@@ -84,7 +82,7 @@ body {
     transform: translateY(-2px);
 }
 
-/* Larger mark + blend file’s white background into the header (avoids a harsh white tile) */
+/* Larger mark, sized to header (no blend mode: caused scroll repaint cost on sticky header) */
 .logo-img {
     display: block;
     height: 72px;
@@ -93,7 +91,6 @@ body {
     object-fit: contain;
     object-position: left center;
     border-radius: 10px;
-    mix-blend-mode: multiply;
 }
 
 .main-nav {
@@ -412,8 +409,12 @@ body {
 
 /* Background images from Unsplash (free to use) */
 .hero-slide:nth-child(1) {
-    background: linear-gradient(135deg, rgba(139, 0, 0, 0.45) 0%, rgba(139, 0, 0, 0.35) 100%),
-                url('images/hero-slide-ports.jpg') center/cover no-repeat;
+    background:
+        linear-gradient(135deg, rgba(139, 0, 0, 0.45) 0%, rgba(139, 0, 0, 0.35) 100%),
+        image-set(
+            url('images/hero-slide-ports.webp') type('image/webp'),
+            url('images/hero-slide-ports.jpg') type('image/jpeg')
+        ) center/cover no-repeat;
 }
 .hero-slide:nth-child(2) {
     background: linear-gradient(135deg, rgba(139, 0, 0, 0.45) 0%, rgba(139, 0, 0, 0.35) 100%),
@@ -1080,8 +1081,7 @@ body {
     border-radius: 12px;
     text-decoration: none;
     color: #333;
-    background: rgba(255, 255, 255, 0.75);
-    backdrop-filter: blur(6px);
+    background: rgba(255, 255, 255, 0.92);
     border: 1px solid rgba(139, 0, 0, 0.12);
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
     transition:

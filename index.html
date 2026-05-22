@@ -133,7 +133,10 @@
             <!-- Documentation handling -->
             <article class="service-card animate-on-scroll" style="--delay: 90ms">
                 <div class="service-card-media">
-                    <img src="images/documentation-handling.png" alt="Logistics officer with clipboard, paperwork, and walkie-talkie near shipping containers" width="1024" height="683" loading="lazy">
+                    <picture>
+                        <source type="image/webp" srcset="images/documentation-handling.webp">
+                        <img src="images/documentation-handling.png" alt="Logistics officer with clipboard, paperwork, and walkie-talkie near shipping containers" width="1024" height="683" loading="lazy">
+                    </picture>
                 </div>
                 <div class="service-card-top">
                     <div class="service-icon service-icon--docs" aria-hidden="true">
@@ -180,7 +183,10 @@
                     </ul>
                 </div>
                 <figure class="spotlight-media">
-                    <img src="images/logistics-hub.png" alt="Port cranes, cargo ship, truck, and aircraft for multimodal logistics" width="1200" height="700" loading="lazy">
+                    <picture>
+                        <source type="image/webp" srcset="images/logistics-hub.webp">
+                        <img src="images/logistics-hub.png" alt="Port cranes, cargo ship, truck, and aircraft for multimodal logistics" width="1200" height="700" loading="lazy">
+                    </picture>
                 </figure>
             </article>
 
@@ -586,9 +592,12 @@
             });
         }
 
-        // Nav: scroll spy + active state for in-page sections
+        // Nav: scroll spy via IntersectionObserver (no layout reads on scroll)
         const navSectionIds = ['home', 'services', 'about', 'contact'];
         const navAnchors = document.querySelectorAll('.main-nav a[data-nav]');
+        const navSections = navSectionIds
+            .map(function (id) { return document.getElementById(id); })
+            .filter(Boolean);
 
         function setActiveNav(id) {
             navAnchors.forEach(function (a) {
@@ -596,30 +605,51 @@
             });
         }
 
-        function currentSectionFromScroll() {
-            const offset = window.innerWidth <= 900 ? 88 : 120;
-            let current = 'home';
-            navSectionIds.forEach(function (sid) {
-                const el = document.getElementById(sid);
-                if (!el) return;
-                const top = el.getBoundingClientRect().top;
-                if (top <= offset) current = sid;
-            });
-            return current;
+        function getHeaderOffset() {
+            return window.innerWidth <= 900 ? 88 : 120;
         }
 
-        let navTicking = false;
-        function onScrollNav() {
-            if (navTicking) return;
-            navTicking = true;
-            requestAnimationFrame(function () {
-                setActiveNav(currentSectionFromScroll());
-                navTicking = false;
+        const sectionsAboveLine = new Set();
+        let navObserver = null;
+
+        function pickActive() {
+            let active = 'home';
+            navSectionIds.forEach(function (id) {
+                if (sectionsAboveLine.has(id)) active = id;
             });
+            setActiveNav(active);
         }
 
-        window.addEventListener('scroll', onScrollNav, { passive: true });
-        onScrollNav();
+        function buildNavObserver() {
+            if (navObserver) navObserver.disconnect();
+            sectionsAboveLine.clear();
+            const offset = getHeaderOffset();
+            navObserver = new IntersectionObserver(
+                function (entries) {
+                    entries.forEach(function (entry) {
+                        if (entry.boundingClientRect.top <= offset) {
+                            sectionsAboveLine.add(entry.target.id);
+                        } else {
+                            sectionsAboveLine.delete(entry.target.id);
+                        }
+                    });
+                    pickActive();
+                },
+                {
+                    rootMargin: '-' + offset + 'px 0px 0px 0px',
+                    threshold: [0, 1]
+                }
+            );
+            navSections.forEach(function (s) { navObserver.observe(s); });
+        }
+
+        buildNavObserver();
+
+        let resizeTimer = null;
+        window.addEventListener('resize', function () {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(buildNavObserver, 200);
+        }, { passive: true });
 
         navAnchors.forEach(function (a) {
             a.addEventListener('click', function () {
